@@ -1,0 +1,24 @@
+i{
+    /* float: right; */
+    list-style: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.btn-like, .btn-dislike{
+    outline: none;
+    border: none;
+    background-color:transparent;
+    padding: 0;
+}
+.fas{
+    color: red;
+}
+.button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    position: relative;
+    left: 50%;
+    top: -6px;
+}
