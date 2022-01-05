@@ -1,1 +1,40 @@
-<p>form works!</p>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item" >
+        <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed dark" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Add Quote . . .
+            </button>
+         </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <div class="card">
+                    <div class="card-body custom">
+                        <form #quoteForm="ngForm" class="form" action="" (ngSubmit)=submitQuote()>
+                            <div class="form-group">
+                                <textarea type="text" class="ng-valid ng-invalid" class="form-control" required placeholder="Type your quote here . . . . . . . ." name="quote" id="quote" rows="5" [(ngModel)]="newQuote.quote" #quote="ngModel"></textarea>
+                            </div>
+                            <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                                <p>You cannot submit a blank form</p>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="ng-valid ng-invalid" required name="author" placeholder="Author' name.." class="form-control" id="author" [(ngModel)]="newQuote.author" #author="ngModel">
+                            </div>
+                            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                                <p>Authors name</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="ng-valid ng-invalid" required name="name" placeholder="Name of the person who has submitted the quote.." class="form-control" id="name" [(ngModel)]="newQuote.name" #name="ngModel">
+                            </div>
+                            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                                <p>Enter your name</p>
+                            </div>
+                            <button type="submit" class="btn btn-dark"  >Add Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
