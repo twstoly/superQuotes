@@ -1,1 +1,22 @@
-<p>main-control works!</p>
+<app-nav></app-nav>
+<!-- <app-carosel></app-carosel> -->
+
+<div class="container">
+  <br>
+  <app-form (addQuote)="addNewGoal($event)"></app-form>
+  
+  <div class="row">
+    <div class="custom-cards" *ngFor="let quote of quotes, let i = index">
+      <div class="card custom-card" appBackground>
+          <div class="card-body">
+              <p class="card-text">
+                <app-quote [quote]="quote"></app-quote> ~ 
+                <b><em class="color">{{quote.name}}</em></b> 
+              </p>
+              <app-quote-details [quote]="quote" (iscomplete)="completeQuote($event,i)"></app-quote-details>
+          </div>
+      </div><br>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
